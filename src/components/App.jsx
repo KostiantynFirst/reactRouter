@@ -1,14 +1,15 @@
-// import { Routes } from "react-router";
+import { Routes, Route } from "react-router";
 import { Layout } from "./Layout";
+
+import { LoginPage } from "pages/LoginPages";
 
 export const App = () => {
   return (
 
-    <Layout />
-    // <Routes path="/" element={<Layout />}>
-    //   {/* <Route path="/" element={<Layout />} /> */}
-    //   {/* <Route path="*" element={Navigate} /> */}
-    // </Routes>
+    <Routes path="/" element={<Layout />}>
+      <Route path="login" element={<LoginPage />} />
+      {/* <Route path="*" element={Navigate} /> */}
+    </Routes>
 
   );
 };
