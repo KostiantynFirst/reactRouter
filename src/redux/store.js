@@ -4,7 +4,8 @@ import { configureStore} from "@reduxjs/toolkit";
 // import { curryGetDefaultMiddleware } from "@reduxjs/toolkit/dist/getDefaultMiddleware";
 // import logger from "redux-logger";
 
-import { myValueSlice } from "./myValue/slice";
+// import { myValueSlice } from "./myValue/slice";
+import { userSlice } from "./UserSlice";
 
 
 
@@ -19,7 +20,8 @@ import { myValueSlice } from "./myValue/slice";
 export const store = configureStore({
     reducer: {
         // myValue: myReducer,
-        myValue: myValueSlice.reducer,
+        // myValue: myValueSlice.reducer,
+        user: userSlice.reducer,
     },
     // middleware: getDefaultMiddleware => [...getDefaultMiddleware(), logger],
 })
