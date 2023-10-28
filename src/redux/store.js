@@ -1,15 +1,25 @@
-import { configureStore, createAction, createReducer } from "@reduxjs/toolkit";
+import { configureStore} from "@reduxjs/toolkit";
+// import {createAction, createReducer } from "@reduxjs/toolkit";
+// import { createSlice } from "@reduxjs/toolkit";
+// import { curryGetDefaultMiddleware } from "@reduxjs/toolkit/dist/getDefaultMiddleware";
+// import logger from "redux-logger";
 
-export const increment = createAction('myValue/increment');
-export const decrement = createAction('myValue/decrement');
+import { myValueSlice } from "./myValue/slice";
 
-const myReducer = createReducer(10, {
-    [increment]: () => (state, action) => state + action.payload,
-    [decrement]: () => (state, action) => state - action.payload,
-});
+
+
+// export const increment = createAction('myValue/increment');
+// export const decrement = createAction('myValue/decrement');
+
+// const myReducer = createReducer(10, {
+//     [increment]: (state, action) => state + action.payload,
+//     [decrement]: (state, action) => state - action.payload,
+// });
 
 export const store = configureStore({
     reducer: {
-        myValue: myReducer,
+        // myValue: myReducer,
+        myValue: myValueSlice.reducer,
     },
+    // middleware: getDefaultMiddleware => [...getDefaultMiddleware(), logger],
 })
