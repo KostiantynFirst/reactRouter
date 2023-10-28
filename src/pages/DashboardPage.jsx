@@ -1,17 +1,8 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router";
-import { useSelector } from "react-redux";
+import { useLogOutRedirect } from "hooks/UseLogOutRedirect";
 
 export const DashboardPage = () => {
 
-    const isLoggedIn = useSelector(state => state.user.isLoggedIn)
-    const navigate = useNavigate();
-
-    useEffect(() => {
-        if(!isLoggedIn) {
-            navigate('/login', { replace: true })
-        }
-    })
+    useLogOutRedirect();
 
     return <div>Dashboard Page</div>
 };
