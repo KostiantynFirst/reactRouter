@@ -1,7 +1,7 @@
-import { Routes, Route } from "react-router";
+import { Routes, Route, Navigate } from "react-router";
 import { Layout } from "./Layout";
 
-import { LoginPage } from "pages/LoginPages";
+import { LoginPage, DashboardPage } from "pages";
 
 export const App = () => {
   return (
@@ -9,6 +9,8 @@ export const App = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
       <Route path="login" element={<LoginPage />} />
+      <Route path="dashboard" element={<DashboardPage />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>
 
